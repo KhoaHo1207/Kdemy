@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { assets } from "../../assets/assets";
 import Kdemy from "../../assets/Kdemy.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
+import { AppContext } from "../../context/AppContext";
 
 const Navbar = () => {
-  const locatiohn = useLocation();
-  const isCourseListPage = locatiohn.pathname.includes("/course-list");
+  const { navigate, isEducator } = useContext(AppContext);
+  const location = useLocation();
+  const isCourseListPage = location.pathname.includes("/course-list");
   const { openSignIn } = useClerk();
   const { user } = useUser();
 
@@ -16,13 +18,20 @@ const Navbar = () => {
         isCourseListPage ? "bg-white" : "bg-cyan-100/70"
       }`}
     >
-      <img src={Kdemy} alt="Logo" className="w-24 lg:w-28 cursor-pointer" />
+      <img
+        src={Kdemy}
+        alt="Logo"
+        className="w-24 lg:w-28 cursor-pointer"
+        onClick={() => navigate("/")}
+      />
       <div className="hidden md:flex items-center gap-5 text-gray-500">
         {user && (
           <>
             <div className="flex items-center gap-5">
-              <button>Become Educator</button>|{" "}
-              <Link to="/my-enrollments">My Enrollments</Link>
+              <button onClick={() => navigate("/educator")}>
+                {isEducator ? "Educator Dashboard" : ">Become Educator"}
+              </button>
+              | <Link to="/my-enrollments">My Enrollments</Link>
             </div>
           </>
         )}
@@ -43,8 +52,10 @@ const Navbar = () => {
           {user && (
             <>
               <div className="flex items-center gap-5">
-                <button>Become Educator</button>|{" "}
-                <Link to="/my-enrollments">My Enrollments</Link>
+                <button>
+                  {isEducator ? "Educator Dashboard" : ">Become Educator"}
+                </button>
+                | <Link to="/my-enrollments">My Enrollments</Link>
               </div>
             </>
           )}
