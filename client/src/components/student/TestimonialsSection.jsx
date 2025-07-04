@@ -10,9 +10,12 @@ const TestimonialsSection = () => {
         success, and how our <br /> platform has made a difference in their
         lives.
       </p>
-      <div>
+      <div className="grid grid-cols-auto gap-8 mt-14">
         {dummyTestimonial.map((testimonial, index) => (
-          <div key={index}>
+          <div
+            key={index}
+            className="text-sm text-left border border-gray-500/30 pb-6 rounded-lg bg-white shadow-[0px_4px_15px_0px] shadow-black/5 overflow-hidden"
+          >
             <div className="flex items-center gap-4 p-5 bg-gray-500/10">
               <img
                 src={testimonial.image}
@@ -26,6 +29,7 @@ const TestimonialsSection = () => {
                 <p className="text-gray-800/80">{testimonial.role}</p>
               </div>
             </div>
+
             <div className="p-5 pb-7">
               <div className="flex items-center gap-0.5">
                 {[...Array(5)].map((_, i) => (
@@ -43,6 +47,9 @@ const TestimonialsSection = () => {
               </div>
               <p className="text-gray-500 mt-5">{testimonial.feedback}</p>
             </div>
+            <a href="#" className="text-blue-500 underline px-5">
+              Read more
+            </a>
           </div>
         ))}
       </div>
