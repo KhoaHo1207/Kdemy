@@ -10,8 +10,6 @@ const Footer = () => {
           <p className="mt-6 text-center md:text-left text-sm text-white/80">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
             voluptatibus magni nulla praesentium doloribus eligendi in enim
-            perferendis doloremque nesciunt vitae et officia, corporis dolore
-            illum libero eum? Dolore, vitae!
           </p>
         </div>
         <div className="flex flex-col md:items-start items-center w-full">
