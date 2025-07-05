@@ -19,7 +19,7 @@ const Navbar = () => {
       }`}
     >
       <img
-        src={Kdemy}
+        src={assets.logo}
         alt="Logo"
         className="w-24 lg:w-28 cursor-pointer"
         onClick={() => navigate("/")}

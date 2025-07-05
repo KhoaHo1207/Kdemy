@@ -13,6 +13,16 @@ export default {
       gridTemplateColumns: {
         auto: "repeat(auto-fit, minmax(200px, 1fr))",
       },
+      spacing: {
+        "section-height": "calc(100vh - 80px)",
+        "section-height-small": "calc(100vh - 120px)",
+      },
+      maxWidth: {
+        "course-card": "424px",
+      },
+      boxShadow: {
+        "custom-card": "0px 4px 15px 2px rgba(0, 0, 0, 0.1)",
+      },
     },
   },
   plugins: [],

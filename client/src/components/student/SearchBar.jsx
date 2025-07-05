@@ -9,6 +9,8 @@ const SearchBar = ({ data }) => {
     e.preventDefault();
     if (input.trim() !== "") {
       navigate(`/course-list/${input}`);
+    } else {
+      navigate("/course-list");
     }
   };
   return (
