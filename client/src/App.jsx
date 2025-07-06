@@ -28,7 +28,7 @@ function App() {
         <Route path="/educator" element={<Educator />}>
           <Route path="" element={<Dashboard />} />
           <Route path="add-course" element={<AddCourse />} />
-          <Route path="my-course" element={<MyCourses />} />
+          <Route path="my-courses" element={<MyCourses />} />
           <Route path="student-enrolled" element={<StudentEnrolled />} />
         </Route>
         <Route path="*" element={<h1>404 Not Found</h1>} />
